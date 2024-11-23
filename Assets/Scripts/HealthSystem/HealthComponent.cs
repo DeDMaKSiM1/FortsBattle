@@ -6,12 +6,14 @@ namespace Assets.Scripts.HealthSystem
     public class HealthComponent : MonoBehaviour, IDamageable
     {
         [SerializeField] private float health;
+
+        public UnityEvent OnHealthZero;
+
         public float Health
         {
             get => health;
             private set => health = value;
         }
-        public UnityEvent OnHealthZero;
 
         public void CheckHealth()
         {
@@ -20,7 +22,6 @@ namespace Assets.Scripts.HealthSystem
                 OnHealthZero.Invoke();
             }
         }
-
         public void TakeDamage(float damage)
         {
             Health += damage;

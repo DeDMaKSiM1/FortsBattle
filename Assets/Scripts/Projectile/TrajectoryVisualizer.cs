@@ -67,9 +67,5 @@ namespace Assets.Scripts.Projectile
             point.z = 0;
             return point;
         }
-
-
-
-
     }
 }

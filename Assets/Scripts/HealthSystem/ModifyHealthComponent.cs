@@ -7,6 +7,7 @@ namespace Assets.Scripts.HealthSystem
     {
         [SerializeField] private float ModifyValue = -10;
         [SerializeField] private string Tag;
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.TryGetComponent<IDamageable>(out IDamageable damageable) && collision.CompareTag(Tag))
